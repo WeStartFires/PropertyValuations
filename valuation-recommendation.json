@@ -5,19 +5,25 @@
   "properties": {
     "recommended_marketing_price": {
       "type": "number",
-      "description": "The suggested list price based on market ranges and property condition"
+      "description": "List price set on a Rightmove price band"
+    },
+    "marketing_price_type": {
+      "type": "string",
+      "enum": ["Guide Price", "Offers Over"],
+      "description": "Label to display with the list price"
     },
     "estimated_achievable_price": {
       "type": "number",
-      "description": "The price the property is likely to achieve after negotiations"
+      "description": "Likely sale price after normal negotiation"
     },
     "rationale": {
       "type": "string",
-      "description": "Brief explanation of how the prices were derived"
+      "description": "Polite, homeowner-friendly explanation (≤400 chars)"
     }
   },
   "required": [
     "recommended_marketing_price",
+    "marketing_price_type",
     "estimated_achievable_price"
   ]
 }
