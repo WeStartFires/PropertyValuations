@@ -34,6 +34,10 @@
     "full_refurb_lower": {
       "type": "number",
       "description": "Lower price of the range for homes requiring full refurbishment"
+    },
+    "rightmove_url": {
+      "type": "string",
+      "description": "URL to results that were analysed"
     }
   },
   "required": [
@@ -44,6 +48,7 @@
     "needs_minor_update_upper",
     "needs_minor_update_lower",
     "full_refurb_upper",
-    "full_refurb_lower"
+    "full_refurb_lower",
+    "rightmove_url"
   ]
 }
