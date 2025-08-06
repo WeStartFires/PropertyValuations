@@ -1,0 +1,23 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Pricing Recommendation",
+  "type": "object",
+  "properties": {
+    "recommended_marketing_price": {
+      "type": "number",
+      "description": "The suggested list price based on market ranges and property condition"
+    },
+    "estimated_achievable_price": {
+      "type": "number",
+      "description": "The price the property is likely to achieve after negotiations"
+    },
+    "rationale": {
+      "type": "string",
+      "description": "Brief explanation of how the prices were derived"
+    }
+  },
+  "required": [
+    "recommended_marketing_price",
+    "estimated_achievable_price"
+  ]
+}
