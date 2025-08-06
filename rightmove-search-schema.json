@@ -1,0 +1,49 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Property Market Summary",
+  "type": "object",
+  "properties": {
+    "number_of_listings_found": {
+      "type": "integer",
+      "description": "Total number of listings found on the search results page"
+    },
+    "radius_used": {
+      "type": "string",
+      "description": "Search radius actually used, e.g. '0.25 miles' or '1 mile'"
+    },
+    "well_presented_upper": {
+      "type": "number",
+      "description": "Upper price of the range for well‑presented (move‑in‑ready) homes"
+    },
+    "well_presented_lower": {
+      "type": "number",
+      "description": "Lower price of the range for well‑presented (move‑in‑ready) homes"
+    },
+    "needs_minor_update_upper": {
+      "type": "number",
+      "description": "Upper price of the range for homes needing minor updates"
+    },
+    "needs_minor_update_lower": {
+      "type": "number",
+      "description": "Lower price of the range for homes needing minor updates"
+    },
+    "full_refurb_upper": {
+      "type": "number",
+      "description": "Upper price of the range for homes requiring full refurbishment"
+    },
+    "full_refurb_lower": {
+      "type": "number",
+      "description": "Lower price of the range for homes requiring full refurbishment"
+    }
+  },
+  "required": [
+    "number_of_listings_found",
+    "radius_used",
+    "well_presented_upper",
+    "well_presented_lower",
+    "needs_minor_update_upper",
+    "needs_minor_update_lower",
+    "full_refurb_upper",
+    "full_refurb_lower"
+  ]
+}
