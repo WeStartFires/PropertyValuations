@@ -1,8 +1,46 @@
 {
-  "recommended_marketing_price": "number",
-  "marketing_price_type": "string",
-  "estimated_achievable_price": "number",
-  "auction_reserve_price": "number",
-  "date_of_death_price": "number",
-  "rationale": "string"
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Pricing Recommendation",
+  "type": "object",
+  "properties": {
+    "recommended_marketing_price": {
+      "type": "number",
+      "description": "Suggested list price positioned on a Rightmove price-band break-point"
+    },
+    "marketing_price_type": {
+      "type": "string",
+      "enum": ["Guide Price", "Offers Over"],
+      "description": "Label to accompany the marketing price"
+    },
+    "estimated_achievable_price": {
+      "type": "number",
+      "description": "Likely sale price after typical negotiation"
+    },
+    "auction_reserve_price": {
+      "type": "number",
+      "description": "Suggested reserve for an auction sale (≈ 85–90 % of achievable price)"
+    },
+    "date_of_death_price": {
+      "type": "number",
+      "description": "Estimated property value at the date of death"
+    },
+    "rationale_marketing": {
+      "type": "string",
+      "maxLength": 400,
+      "description": "Concise, vendor-friendly explanation for marketing & achievable prices"
+    },
+    "rationale_dod": {
+      "type": "string",
+      "maxLength": 400,
+      "description": "Concise explanation for the date-of-death valuation"
+    }
+  },
+  "required": [
+    "recommended_marketing_price",
+    "marketing_price_type",
+    "estimated_achievable_price",
+    "auction_reserve_price",
+    "date_of_death_price"
+  ],
+  "additionalProperties": false
 }
