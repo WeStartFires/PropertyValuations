@@ -1,29 +1,8 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "title": "Pricing Recommendation",
-  "type": "object",
-  "properties": {
-    "recommended_marketing_price": {
-      "type": "number",
-      "description": "List price set on a Rightmove price band"
-    },
-    "marketing_price_type": {
-      "type": "string",
-      "enum": ["Guide Price", "Offers Over"],
-      "description": "Label to display with the list price"
-    },
-    "estimated_achievable_price": {
-      "type": "number",
-      "description": "Likely sale price after normal negotiation"
-    },
-    "rationale": {
-      "type": "string",
-      "description": "Polite, homeowner-friendly explanation (≤400 chars)"
-    }
-  },
-  "required": [
-    "recommended_marketing_price",
-    "marketing_price_type",
-    "estimated_achievable_price"
-  ]
+  "recommended_marketing_price": "number",
+  "marketing_price_type": "string",
+  "estimated_achievable_price": "number",
+  "auction_reserve_price": "number",
+  "date_of_death_price": "number",
+  "rationale": "string"
 }
