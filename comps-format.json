@@ -1,0 +1,14 @@
+
+---
+
+## 2.  “Values to Extract” schema (Zapier)
+
+```json
+{
+  "compsaddress": "string",
+  "compsbeds": "string",
+  "compsprice": "string",
+  "compsdist": "string",
+  "compssqm": "string",
+  "compsdates": "string"
+}
