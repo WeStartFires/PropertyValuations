@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "AgentEmails",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["emails_line"],
+  "properties": {
+    "emails_line": {
+      "type": "string",
+      "description": "Lowercase sales-branch emails, one per brand, joined by ', '. Return 'NONE' if none found.",
+      "pattern": "^\\s*(?:none|[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,}(?:,\\s*[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,})*)\\s*$"
+    }
+  }
+}
