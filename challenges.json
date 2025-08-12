@@ -1,24 +1,15 @@
 {
-  "name": "risks_and_advantages",
+  "name": "challenges_and_advantages",
   "schema": {
     "type": "object",
     "additionalProperties": false,
-    "required": ["challenges_flags","challenges_text","advantages_flags","advantages_text"],
+    "required": ["challenges_flags", "challenges_text", "advantages_flags", "advantages_text"],
     "properties": {
-      "challenges_flags": {
-        "type": "array",
-        "items": { "type": "string" },
-        "default": []
-      },
-      "challenges_text": { "type": "string", "maxLength": 450 },
-      "advantages_flags": {
-        "type": "array",
-        "items": { "type": "string" },
-        "default": []
-      },
-      "advantages_text": { "type": "string", "maxLength": 450 }
+      "challenges_flags": { "type": "array", "items": { "type": "string" }, "default": [] },
+      "challenges_text":  { "type": "string", "maxLength": 450 },
+      "advantages_flags": { "type": "array", "items": { "type": "string" }, "default": [] },
+      "advantages_text":  { "type": "string", "maxLength": 450 }
     }
   },
   "strict": true
 }
-
