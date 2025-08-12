@@ -1,0 +1,121 @@
+{
+  "title": "condition_extraction",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "address",
+    "report_date",
+    "clearance_needed",
+    "internal_summary",
+    "external_summary",
+    "condition_flags_internal",
+    "condition_flags_external",
+    "mortgageability_flags",
+    "required_before_sale",
+    "other_internal_issues",
+    "other_external_issues",
+    "sources"
+  ],
+  "properties": {
+    "address": { "type": "string" },
+    "report_date": { "type": ["string","null"], "description": "YYYY-MM-DD if visible in a report; else null" },
+    "clearance_needed": { "type": "boolean" },
+
+    "internal_summary": { "type": "string", "maxLength": 500 },
+    "external_summary": { "type": "string", "maxLength": 500 },
+
+    "condition_flags_internal": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "needs_redecoration",
+          "needs_updating",
+          "dated_kitchen_bathroom",
+          "deep_clean_required",
+          "damp_or_mould",
+          "leaks_or_staining",
+          "electrics_dated_or_unknown",
+          "needs_rewiring",
+          "no_central_heating",
+          "heating_inoperative",
+          "plumbing_issues",
+          "uneven_floors_or_cracking",
+          "structural_survey_advised",
+          "roof_issues",
+          "single_glazed",
+          "not_fully_double_glazed",
+          "storage_heaters",
+          "spray_foam_insulation_unmortgageable"
+        ]
+      },
+      "default": []
+    },
+
+    "condition_flags_external": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "roof_issues",
+          "guttering_issues",
+          "cracking_render",
+          "missing_or_damaged_tiles",
+          "overgrown_garden",
+          "damaged_fencing_or_boundaries",
+          "limited_parking",
+          "no_garden",
+          "non_standard_construction",
+          "mundic_risk"
+        ]
+      },
+      "default": []
+    },
+
+    "mortgageability_flags": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "severe_structural_defects",
+          "extensive_damp_or_mould",
+          "asbestos_poor_condition",
+          "spray_foam_insulation",
+          "non_standard_construction",
+          "very_short_lease",
+          "short_lease",
+          "bsa_cladding_risk",
+          "high_flood_risk",
+          "contaminated_land",
+          "cash_buyers_only"
+        ]
+      },
+      "default": []
+    },
+
+    "required_before_sale": {
+      "type": "array",
+      "items": { "type": "string", "maxLength": 140 },
+      "default": []
+    },
+
+    "other_internal_issues": {
+      "type": "array",
+      "items": { "type": "string", "maxLength": 140 },
+      "default": []
+    },
+
+    "other_external_issues": {
+      "type": "array",
+      "items": { "type": "string", "maxLength": 140 },
+      "default": []
+    },
+
+    "sources": {
+      "type": "array",
+      "description": "Where each conclusion came from (e.g., 'report.pdf p4', 'kitchen.jpg', 'walkthrough.mp4 @00:42')",
+      "items": { "type": "string" },
+      "default": []
+    }
+  }
+}
