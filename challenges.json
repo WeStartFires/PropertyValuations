@@ -5,10 +5,24 @@
     "additionalProperties": false,
     "required": ["challenges_flags", "challenges_text", "advantages_flags", "advantages_text"],
     "properties": {
-      "challenges_flags": { "type": "array", "items": { "type": "string" }, "default": [] },
-      "challenges_text":  { "type": "string", "maxLength": 450 },
-      "advantages_flags": { "type": "array", "items": { "type": "string" }, "default": [] },
-      "advantages_text":  { "type": "string", "maxLength": 450 }
+      "challenges_flags": {
+        "type": "array",
+        "items": {
+          "type": "string",
+          "enum": ["market_cooling","low_buyer_demand","high_competition","on_busy_road","near_railway","near_airport","noise_pollution","near_retail_or_pub","opposite_cemetery","limited_parking","small_garden","no_garden","short_lease","very_short_lease","lease_extension_needed","high_service_charge","high_ground_rent","shared_ownership","title_restriction","right_of_way","unregistered_title","conservation_area","listed_building","age_restriction_55_plus","age_restriction_60_plus","ex_local_authority","financial_charges_on_title","pending_title_application","spray_foam_insulation_unmortgageable","mundic_risk","non_standard_construction","bsa_cladding_risk","top_floor_may_deter","storage_heaters","single_glazed","not_fully_double_glazed","needs_redecoration","needs_updating","dated_kitchen_bathroom","damp_or_mould","electrics_dated_or_unknown","needs_rewiring","no_central_heating","heating_inoperative","leaks_or_staining","roof_issues","uneven_floors_or_cracking","structural_survey_advised","bathroom_or_kitchen_replacement","deep_clean_required","plumbing_issues","overgrown_garden","clearance_required","tenanted_complicates_sale","cash_buyers_only","auction_candidate","complex_legal_dispute","mid_renovation_uncertain","limited_comparables"]
+        },
+        "default": []
+      },
+      "challenges_text": { "type": "string", "maxLength": 450 },
+      "advantages_flags": {
+        "type": "array",
+        "items": {
+          "type": "string",
+          "enum": ["good_sized_garden","large_bedrooms","walk_to_shops","walk_to_parks","walk_to_station","close_to_good_schools","strong_local_amenities","easy_access_countryside","cul_de_sac","fireplace","french_doors","decking","close_to_beach","holiday_home_potential","good_rental_opportunity","extension_potential","city_centre_location","balcony","period_features","near_university","good_commuter_town","kitchen_in_good_condition","detached_garage","porter_or_concierge","prime_location","countryside_views","original_features","close_to_underground","onsite_gym","opposite_park","easy_access_centre","coastal_location","large_plot","underground_parking","private_terrace","good_lease_length","good_transport_links","sea_views","recently_built","onsite_staff","open_plan_living","tree_lined_road","warden_assistance","ground_floor","gated_development","converted_loft_room","stunning_views","woodland_setting","onsite_facilities","garden_patio","lift_in_building","corner_plot","ample_parking","cellar_or_basement","share_of_freehold","unique_features","converted_annex","desirable_road","gated_plot","underfloor_heating","driveway","on_street_parking","communal_garden","near_bus_links","future_development_potential","well_maintained_garden","ideal_family_home","quiet_location","near_marina","penthouse","swimming_pool","pond_or_water_feature","stables_or_outbuildings","historic_features","close_to_hospital","large_driveway","private_courtyard","close_to_amenities","well_presented","recently_redecorated","nearby_attractions","new_build","high_ceilings","grade_ii_listed_character","walk_in_shower_bathroom","extended_property","new_kitchen_bathroom","sauna_or_summer_house_or_veranda_or_sun_room","new_boiler_or_recent_service","wood_burner","solar_panels","professionally_cleaned","recent_roof_works","upvc_or_new_double_glazing","utility_room_or_laundry","loft_insulated","ev_charging_point","good_layout","annex_or_outbuilding","two_car_garage","two_driveways","south_facing_garden"]
+        },
+        "default": []
+      },
+      "advantages_text": { "type": "string", "maxLength": 450 }
     }
   },
   "strict": true
