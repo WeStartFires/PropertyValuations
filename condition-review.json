@@ -1,121 +1,165 @@
 {
-  "title": "condition_extraction",
-  "type": "object",
-  "additionalProperties": false,
-  "required": [
-    "address",
-    "report_date",
-    "clearance_needed",
-    "internal_summary",
-    "external_summary",
-    "condition_flags_internal",
-    "condition_flags_external",
-    "mortgageability_flags",
-    "required_before_sale",
-    "other_internal_issues",
-    "other_external_issues",
-    "sources"
-  ],
-  "properties": {
-    "address": { "type": "string" },
-    "report_date": { "type": ["string","null"], "description": "YYYY-MM-DD if visible in a report; else null" },
-    "clearance_needed": { "type": "boolean" },
+  "name": "response_schema",
+  "schema": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+      "address",
+      "report_date",
+      "clearance_needed",
+      "internal_summary",
+      "external_summary",
+      "condition_flags_internal",
+      "condition_flags_external",
+      "mortgageability_flags",
+      "required_before_sale",
+      "other_internal_issues",
+      "other_external_issues",
+      "sources",
+      "challenges_flags",
+      "challenges_text",
+      "advantages_flags",
+      "advantages_text"
+    ],
+    "properties": {
+      "address": { "type": "string" },
+      "report_date": { "type": ["string","null"] },
 
-    "internal_summary": { "type": "string", "maxLength": 500 },
-    "external_summary": { "type": "string", "maxLength": 500 },
+      "clearance_needed": { "type": "boolean", "default": false },
 
-    "condition_flags_internal": {
-      "type": "array",
-      "items": {
-        "type": "string",
-        "enum": [
-          "needs_redecoration",
-          "needs_updating",
-          "dated_kitchen_bathroom",
-          "deep_clean_required",
-          "damp_or_mould",
-          "leaks_or_staining",
-          "electrics_dated_or_unknown",
-          "needs_rewiring",
-          "no_central_heating",
-          "heating_inoperative",
-          "plumbing_issues",
-          "uneven_floors_or_cracking",
-          "structural_survey_advised",
-          "roof_issues",
-          "single_glazed",
-          "not_fully_double_glazed",
-          "storage_heaters",
-          "spray_foam_insulation_unmortgageable"
-        ]
+      "internal_summary": { "type": "string", "maxLength": 450 },
+      "external_summary": { "type": "string", "maxLength": 450 },
+
+      "condition_flags_internal": {
+        "type": "array",
+        "items": {
+          "type": "string",
+          "enum": [
+            "needs_redecoration","needs_updating","dated_kitchen_bathroom",
+            "damp_or_mould","electrics_dated_or_unknown","needs_rewiring",
+            "no_central_heating","heating_inoperative","plumbing_issues",
+            "uneven_floors_or_cracking","structural_survey_advised",
+            "roof_issues","single_glazed","not_fully_double_glazed",
+            "storage_heaters","spray_foam_insulation_unmortgageable"
+          ]
+        },
+        "default": []
       },
-      "default": []
-    },
 
-    "condition_flags_external": {
-      "type": "array",
-      "items": {
-        "type": "string",
-        "enum": [
-          "roof_issues",
-          "guttering_issues",
-          "cracking_render",
-          "missing_or_damaged_tiles",
-          "overgrown_garden",
-          "damaged_fencing_or_boundaries",
-          "limited_parking",
-          "no_garden",
-          "non_standard_construction",
-          "mundic_risk"
-        ]
+      "condition_flags_external": {
+        "type": "array",
+        "items": {
+          "type": "string",
+          "enum": [
+            "roof_issues","guttering_issues","cracking_render",
+            "missing_or_damaged_tiles","overgrown_garden",
+            "damaged_fencing_or_boundaries","limited_parking","no_garden",
+            "non_standard_construction","mundic_risk"
+          ]
+        },
+        "default": []
       },
-      "default": []
-    },
 
-    "mortgageability_flags": {
-      "type": "array",
-      "items": {
-        "type": "string",
-        "enum": [
-          "severe_structural_defects",
-          "extensive_damp_or_mould",
-          "asbestos_poor_condition",
-          "spray_foam_insulation",
-          "non_standard_construction",
-          "very_short_lease",
-          "short_lease",
-          "bsa_cladding_risk",
-          "high_flood_risk",
-          "contaminated_land",
-          "cash_buyers_only"
-        ]
+      "mortgageability_flags": {
+        "type": "array",
+        "items": {
+          "type": "string",
+          "enum": [
+            "severe_structural_defects","extensive_damp_or_mould",
+            "asbestos_poor_condition","spray_foam_insulation",
+            "non_standard_construction","very_short_lease","short_lease",
+            "bsa_cladding_risk","high_flood_risk","contaminated_land",
+            "cash_buyers_only",
+            "age_restriction_55_plus","age_restriction_60_plus"
+          ]
+        },
+        "default": []
       },
-      "default": []
-    },
 
-    "required_before_sale": {
-      "type": "array",
-      "items": { "type": "string", "maxLength": 140 },
-      "default": []
-    },
+      "required_before_sale": {
+        "type": "array",
+        "items": { "type": "string", "maxLength": 140 },
+        "default": []
+      },
 
-    "other_internal_issues": {
-      "type": "array",
-      "items": { "type": "string", "maxLength": 140 },
-      "default": []
-    },
+      "other_internal_issues": {
+        "type": "array",
+        "items": { "type": "string", "maxLength": 140 },
+        "default": []
+      },
 
-    "other_external_issues": {
-      "type": "array",
-      "items": { "type": "string", "maxLength": 140 },
-      "default": []
-    },
+      "other_external_issues": {
+        "type": "array",
+        "items": { "type": "string", "maxLength": 140 },
+        "default": []
+      },
 
-    "sources": {
-      "type": "array",
-      "description": "Where each conclusion came from (e.g., 'report.pdf p4', 'kitchen.jpg', 'walkthrough.mp4 @00:42')",
-      "items": { "type": "string" },
-      "default": []
+      "sources": {
+        "type": "array",
+        "description": "e.g., 'report.pdf p4', 'kitchen.jpg', 'front_elevation.jpg'",
+        "items": { "type": "string" },
+        "default": []
+      },
+
+      "challenges_flags": {
+        "type": "array",
+        "items": {
+          "type": "string",
+          "enum": [
+            "market_cooling","low_buyer_demand","high_competition",
+            "on_busy_road","near_railway","near_airport","noise_pollution",
+            "near_retail_or_pub","opposite_cemetery","limited_parking",
+            "small_garden","no_garden","short_lease","very_short_lease",
+            "high_service_charge","high_ground_rent","shared_ownership",
+            "title_restriction","right_of_way","unregistered_title",
+            "conservation_area","listed_building",
+            "age_restriction_55_plus","age_restriction_60_plus",
+            "ex_local_authority","financial_charges_on_title",
+            "pending_title_application","spray_foam_insulation_unmortgageable",
+            "mundic_risk","non_standard_construction","bsa_cladding_risk",
+            "top_floor_may_deter","storage_heaters","single_glazed",
+            "not_fully_double_glazed","tenanted_complicates_sale",
+            "cash_buyers_only","auction_candidate","mid_renovation_uncertain",
+            "limited_comparables","needs_updating","needs_redecoration"
+          ]
+        },
+        "default": []
+      },
+
+      "challenges_text": { "type": "string", "maxLength": 450 },
+
+      "advantages_flags": {
+        "type": "array",
+        "items": {
+          "type": "string",
+          "enum": [
+            "good_sized_garden","large_bedrooms","walk_to_shops",
+            "walk_to_parks","walk_to_station","close_to_good_schools",
+            "strong_local_amenities","easy_access_countryside","cul_de_sac",
+            "fireplace","french_doors","decking","good_rental_opportunity",
+            "extension_potential","city_centre_location","balcony",
+            "period_features","near_university","good_commuter_town",
+            "kitchen_in_good_condition","detached_garage","prime_location",
+            "countryside_views","original_features","opposite_park",
+            "easy_access_centre","large_plot","private_terrace",
+            "good_lease_length","good_transport_links","recently_built",
+            "open_plan_living","tree_lined_road","ground_floor",
+            "corner_plot","ample_parking","cellar_or_basement",
+            "share_of_freehold","unique_features","desirable_road",
+            "driveway","on_street_parking","communal_garden","near_bus_links",
+            "well_maintained_garden","ideal_family_home","quiet_location",
+            "private_courtyard","close_to_amenities","well_presented",
+            "recently_redecorated","new_boiler_or_recent_service",
+            "wood_burner","recent_roof_works","upvc_or_new_double_glazing",
+            "utility_room_or_laundry","good_layout","two_driveways",
+            "south_facing_garden","ground_floor_advantage"
+          ]
+        },
+        "default": []
+      },
+
+      "advantages_text": { "type": "string", "maxLength": 450 }
     }
-  }
+  },
+  "strict": true
 }
