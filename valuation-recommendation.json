@@ -4,7 +4,7 @@
   "type": "object",
   "properties": {
     "recommended_marketing_price": {
-      "type": "number",
+      "type": "string",
       "description": "Suggested list price positioned on a Rightmove price-band break-point"
     },
     "marketing_price_type": {
@@ -13,15 +13,15 @@
       "description": "Label to accompany the marketing price"
     },
     "estimated_achievable_price": {
-      "type": "number",
+      "type": "string",
       "description": "Likely sale price after typical negotiation"
     },
     "auction_reserve_price": {
-      "type": "number",
+      "type": "string",
       "description": "Suggested reserve for an auction sale (≈ 85–90 % of achievable price)"
     },
     "date_of_death_price": {
-      "type": "number",
+      "type": "string",
       "description": "Estimated property value at the date of death"
     },
     "rationale_marketing": {
