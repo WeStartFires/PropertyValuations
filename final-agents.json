@@ -1,12 +1,13 @@
 {
   "title": "AgentEmails",
   "type": "object",
+  "additionalProperties": false,
   "required": ["emails"],
   "properties": {
     "emails": {
       "type": "string",
-      "description": "Lowercase branch emails, comma+space separated. Return 'NONE' only if no compliant emails after two passes.",
-      "pattern": "^\\s*(?:NONE|[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,}(?:,\\s*[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,})*)\\s*$"
+      "description": "Lowercase branch emails, one per brand, joined by ', '. Return exactly 10 if available. Return 'NONE' only after exhausting all three passes with zero results.",
+      "pattern": "^\\s*(?:NONE|[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,}(?:,\\s*[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,}){9,})\\s*$"
     }
   }
 }
