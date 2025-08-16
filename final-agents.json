@@ -3,7 +3,7 @@
   "title": "AgentEmails",
   "type": "object",
   "additionalProperties": false,
-  "required": ["emails_line"],
+  "required": ["emails"],
   "properties": {
     "emails_line": {
       "type": "string",
